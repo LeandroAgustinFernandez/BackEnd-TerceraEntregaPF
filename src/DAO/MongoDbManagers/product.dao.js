@@ -1,6 +1,6 @@
 import { productModel } from "../models/product.model.js";
 
-export default class ProductManager {
+export default class ProductManagerDB {
   
   async getAll(limit, page = 1, query = false, sort = false) {
     try {

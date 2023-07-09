@@ -1,10 +1,14 @@
 import dotenv from "dotenv";
-dotenv.config();
+import path from "path";
 
-const URL = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@coderhousecluster.phsl88g.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
+dotenv.config({
+  path: path.resolve(process.env.NODE_ENV + ".env"),
+});
 
-export default { 
-    mongoUrl: URL,
-    jwtPrivate: process.env.JWT_PRIVATE_KEY
-}
+const URL = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@coderhousecluster.phsl88g.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
 
+export default {
+  mongoUrl: URL,
+  jwtPrivate: process.env.JWT_PRIVATE_KEY,
+  persistence: process.env.PERSISTENCE,
+};

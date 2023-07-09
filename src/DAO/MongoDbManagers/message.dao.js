@@ -1,6 +1,6 @@
 import { messageModel } from "../models/message.model.js";
 
-export default class MessageManager {
+export default class MessageManagerDB {
   async create(data) {
     let { user, message, id } = data;
     let result = await messageModel.create({ user, message, id });

@@ -113,5 +113,5 @@ export const logoutView = async (request, response) => {
 
 export const chatView = async (request, response) => {
   const { user } = request.user;
-  response.render("chat", { title: "Chat",style: "styles", logued: true, role: user.role === 'admin' });
+  response.render("chat", { title: "Chat",style: "styles", logued: true, user });
 };

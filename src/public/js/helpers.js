@@ -1,5 +1,3 @@
-
-
 const addToCart = async (e) => {
   if (e.target.classList.contains("addtocart")) {
     let pid = e.target.dataset.id;

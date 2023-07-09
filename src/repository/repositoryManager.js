@@ -4,7 +4,7 @@ import TicketRepository from "./ticket.repository.js";
 import UserRepository from "./user.repository.js";
 import MessageRepository from "./message.repository.js";
 
-import { CART_DAO, MESSAGE_DAO, PRODUCT_DAO, TICKET_DAO, USER_DAO } from "../dao/DAOManagers.js";
+import { CART_DAO, MESSAGE_DAO, PRODUCT_DAO, TICKET_DAO, USER_DAO } from "../DAO/DAOFactory.js";
 
 const CART_REPOSITORY = new CartRepository(CART_DAO);
 const PRODUCT_REPOSITORY = new ProductRepository(PRODUCT_DAO);

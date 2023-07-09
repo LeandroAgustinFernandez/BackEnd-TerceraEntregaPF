@@ -1,6 +1,6 @@
 import { userModel } from "../models/user.model.js";
 
-export default class UserManager {
+export default class UserManagerDB {
   async create(userInfo) {
     try {
       let result = await userModel.create(userInfo);

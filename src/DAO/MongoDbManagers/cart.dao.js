@@ -1,7 +1,7 @@
 import ProductManager from "./product.dao.js";
 import { cartModel } from "../models/cart.model.js";
 
-export default class CartManager {
+export default class CartManagerDB {
 
   async create() {
     try {

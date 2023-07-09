@@ -20,7 +20,7 @@ export default class CartRepository {
   }
 
   async deleteProduct(cid, pid) {
-    return await this.DAO.deleteAllProducts(cid, pid);
+    return await this.DAO.deleteProduct(cid, pid);
   }
 
   async updateProducts(cid, products) {

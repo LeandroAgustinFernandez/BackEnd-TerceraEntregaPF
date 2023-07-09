@@ -25,7 +25,7 @@ class RouterClass {
   }
 
   delete(path, ...cbs) {
-    this.router.put(path, this.applayCallbacks(cbs));
+    this.router.delete(path, this.applayCallbacks(cbs));
   }
 
   applayCallbacks(cbs) {

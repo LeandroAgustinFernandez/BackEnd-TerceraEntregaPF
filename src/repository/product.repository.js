@@ -19,8 +19,7 @@ export default class ProductRepository {
   }
 
   async updateProduct(id, newParams) {
-    let productDBFormat = await PRODUCT_DTO.product(newParams);
-    return await this.DAO.update(id, productDBFormat);
+    return await this.DAO.update(id, newParams);
   }
 
   async deleteProduct(id) {

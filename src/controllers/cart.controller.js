@@ -5,7 +5,7 @@ import {
 } from "../services/servicesManager.js";
 
 export const getCart = async (request, response) => {
-  const { cid } = request.user.cart;
+  const { cid } = request?.user?.cart || request?.params;
   let res = await CART_SERVICES.getCart(cid);
   res?.error
     ? response.status(404).send({ res })
@@ -66,13 +66,13 @@ export const deleteProductInCart = async (request, response) => {
 
 export const closeCart = async (request, response) => {
   const { cid } = request.params;
-  const { user } = request.user;
-
+  const { user } = request?.user || { user: { email: "m.a@gmail.com" } };
   let cart = await CART_SERVICES.getCart(cid);
+
   if (cart.products.length > 0) {
     let amount = 0;
     let productWithoutStock = [];
-    let purchaser = user.email;
+    let purchaser = user?.email || "m.a@gmail.com";
 
     cart.products.forEach(async ({ product, quantity }) => {
       if (product?.stock >= quantity) {
@@ -80,7 +80,7 @@ export const closeCart = async (request, response) => {
         product.stock -= quantity;
         await PRODUCT_SERVICES.updateProduct(product._id, product);
       } else {
-        productWithoutStock.push({ product: product._id, quantity });
+        productWithoutStock.push({ product, quantity });
       }
     });
 

@@ -36,12 +36,10 @@ export const register = async (request, response) => {
     email,
     age,
     password: createHash(password),
-    cart: res._id,
+    cart: { _id: res._id },
     role: "user",
   };
-
   let result = await SESSION_SERVICES.saveUser(newUser);
-
   let { password: pass, ...userAttributes } = newUser;
 
   const token = generateToken(userAttributes);

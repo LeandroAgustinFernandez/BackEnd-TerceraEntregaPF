@@ -1,7 +1,8 @@
 // ? Utils config
 import { __dirname, PORT } from "./utils.js";
-// ? DB Connection
-import MongoDbConnection from "./config/MongoDbConnection.js";
+
+// // ? DB Connection
+// import MongoDbConnection from "./config/MongoDbConnection.js";
 // ? Archivos de rutas.
 import CartRouterClass from "./routes/cart.router.js";
 import ProductsRouterClass from "./routes/product.router.js";
@@ -22,8 +23,10 @@ import cookieParser from "cookie-parser";
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
 import { MESSAGE_SERVICES } from "./services/servicesManager.js";
+import dotenv from 'dotenv';
 
-MongoDbConnection.getConnection();
+dotenv.config();
+// MongoDbConnection.getConnection();
 
 const app = express();
 
