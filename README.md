@@ -12,3 +12,10 @@ Ejecutar el servidor
 npm start
 ```
 
+```sh
+npm run mongo
+```
+
+```sh
+npm run files
+```
